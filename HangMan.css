@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 24px;
+    background-color: aqua;
+}
+header{
+    width: 100%;
+    /* font-family: 'Varela Round', sans-serif; */
+    /* font-family: 'Akaya Telivigala', cursive; */
+    font-family: 'Architects Daughter', cursive;
+    
+}
+#MainTitle{
+    width: 300px;
+    margin: auto;
+    font-size: 56px;
+    margin-top: 30px;
+    font-weight:bolder;
+    color: teal;
+    text-shadow: 3px 1px 3px black;
+
+}
+#categories{
+
+}
+#game{
+
+}
+#result{
+
+}
