@@ -3,16 +3,42 @@
 }
 body{
     font-size: 24px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+#bgImg{
+    opacity: .9;
+    width: 100%;
+    height: 100%;
     background-image: url('background3.png');
     background-size: cover;
     background-position: 0px -160px;
-    
-
+    z-index: -20;
+}
+#bushBox{
+    position: absolute;
+    height: 200px;
+    width: 110%;
+    top: 100px;
+    overflow: hidden;
 }
 #bush{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    z-index: 0;
+    height: 100px;
+    transition: 3s;
+    position: absolute;
+    animation: mymove 5s forwards;
 }
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+  }
+
+/* =====================Main================== */
+
+/* <<<<<<<<<<<<<<<<---NEW GAME--->>>>>>>>>>>> */
 #newGameSign{
     position: absolute;
     width: 300px;
@@ -30,19 +56,44 @@ body{
     opacity: 0;
     z-index: 20;
 }
+/* <<<<<<<<<<<<<<<<---CATEGORIES--->>>>>>>>>>>> */
 #categoriesSign{
     width: 360px;
     position: absolute;
     top: 15px;
     right: 35px;
+    z-index: 10;
 }
-
-header{
-    width: 100%;
-    /* font-family: 'Varela Round', sans-serif; */
-    /* font-family: 'Akaya Telivigala', cursive; */
-    font-family: 'Architects Daughter', cursive;
-    
+.categoryButton{
+    position: absolute;
+    background-color: aqua;
+    width: 200px;
+    height: 60px;
+    opacity: 0;
+    z-index:20 ;
+}
+#historyButton{
+    top: 65px;
+    right: 125px;
+    width: 230px;
+}
+#artButton{
+    top: 160px;
+    right: 130px;
+}
+#geographyButton{
+    top: 260px;
+    right: 80px;
+    width: 270px;
+}
+#sportButton{
+    top: 380px;
+    right: 130px;
+}
+#scienceButton{
+    top: 480px;
+    right: 85px;
+    height: 50px;
 }
 #MainTitle{
     width: 300px;
