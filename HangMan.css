@@ -3,8 +3,40 @@
 }
 body{
     font-size: 24px;
-    background-color: aqua;
+    background-image: url('background3.png');
+    background-size: cover;
+    background-position: 0px -160px;
+    
+
 }
+#bush{
+    width: 200px;
+    height: 200px;
+}
+#newGameSign{
+    position: absolute;
+    width: 300px;
+    top: 175px;
+    right: 80px;
+    z-index: 10;
+}
+#newGameButton{
+    position: absolute;
+    width: 140px;
+    height: 120px;
+    right: 134px;
+    top: 270px;
+    background-color: aqua;
+    opacity: 0;
+    z-index: 20;
+}
+#categoriesSign{
+    width: 360px;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+}
+
 header{
     width: 100%;
     /* font-family: 'Varela Round', sans-serif; */
