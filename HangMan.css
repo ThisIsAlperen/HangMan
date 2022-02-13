@@ -1,13 +1,15 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-size: 24px;
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
-#bgImg{
+
+#bgImg {
     opacity: .9;
     width: 100%;
     height: 100%;
@@ -16,37 +18,43 @@ body{
     background-position: 0px -160px;
     z-index: -20;
 }
-#bushBox{
+
+#bushBox {
     position: absolute;
     height: 200px;
     width: 110%;
-    top: 100px;
+    top: 350px;
     overflow: hidden;
 }
-#bush{
+
+#bush {
+    left: -100px;
     width: 100px;
     z-index: 0;
     height: 100px;
-    transition: 3s;
-    position: absolute;
-    animation: mymove 5s forwards;
+   
 }
-@keyframes mymove {
-    from {left: 0px;}
-    to {left: 200px;}
-  }
+.bushAnimation{
+    top: 0px;
+    transition: 10s ease-out;
+    position: absolute;
+}
+
+
+
 
 /* =====================Main================== */
 
 /* <<<<<<<<<<<<<<<<---NEW GAME--->>>>>>>>>>>> */
-#newGameSign{
+#newGameSign {
     position: absolute;
     width: 300px;
     top: 175px;
     right: 80px;
     z-index: 10;
 }
-#newGameButton{
+
+#newGameButton {
     position: absolute;
     width: 140px;
     height: 120px;
@@ -56,61 +64,66 @@ body{
     opacity: 0;
     z-index: 20;
 }
+
 /* <<<<<<<<<<<<<<<<---CATEGORIES--->>>>>>>>>>>> */
-#categoriesSign{
+#categoriesSign {
     width: 360px;
     position: absolute;
     top: 15px;
     right: 35px;
     z-index: 10;
 }
-.categoryButton{
+
+.categoryButton {
     position: absolute;
     background-color: aqua;
     width: 200px;
     height: 60px;
     opacity: 0;
-    z-index:20 ;
+    z-index: 20;
 }
-#historyButton{
+
+#historyButton {
     top: 65px;
     right: 125px;
     width: 230px;
 }
-#artButton{
+
+#artButton {
     top: 160px;
     right: 130px;
 }
-#geographyButton{
+
+#geographyButton {
     top: 260px;
     right: 80px;
     width: 270px;
 }
-#sportButton{
+
+#sportButton {
     top: 380px;
     right: 130px;
 }
-#scienceButton{
+
+#scienceButton {
     top: 480px;
     right: 85px;
     height: 50px;
 }
-#MainTitle{
+
+#MainTitle {
     width: 300px;
     margin: auto;
     font-size: 56px;
     margin-top: 30px;
-    font-weight:bolder;
+    font-weight: bolder;
     color: teal;
     text-shadow: 3px 1px 3px black;
 
 }
-#categories{
 
-}
-#game{
+#categories {}
 
-}
-#result{
+#game {}
 
-}
+#result {}
