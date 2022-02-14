@@ -32,12 +32,13 @@ body {
     width: 100px;
     z-index: 0;
     height: 100px;
+    transition: 20s ease-out;
+    position: absolute;
    
 }
 .bushAnimation{
     top: 0px;
-    transition: 10s ease-out;
-    position: absolute;
+    
 }
 
 
@@ -64,14 +65,24 @@ body {
     opacity: 0;
     z-index: 20;
 }
+.hide{
+    display: none;
+}
 
 /* <<<<<<<<<<<<<<<<---CATEGORIES--->>>>>>>>>>>> */
-#categoriesSign {
-    width: 360px;
+#categories{
+    position: absolute;
+    width: 390px;
     position: absolute;
     top: 15px;
     right: 35px;
     z-index: 10;
+    transition: .5s;
+    transition-delay: .3s;
+}
+#categoriesSign {
+    width: 360px;
+    
 }
 
 .categoryButton {
@@ -81,45 +92,95 @@ body {
     height: 60px;
     opacity: 0;
     z-index: 20;
+    
 }
 
 #historyButton {
-    top: 65px;
+    top: 50px;
     right: 125px;
     width: 230px;
 }
 
 #artButton {
-    top: 160px;
+    top: 150px;
     right: 130px;
 }
 
 #geographyButton {
-    top: 260px;
+    top: 250px;
     right: 80px;
     width: 270px;
 }
 
 #sportButton {
-    top: 380px;
+    top: 370px;
     right: 130px;
 }
 
 #scienceButton {
-    top: 480px;
+    top: 470px;
     right: 85px;
     height: 50px;
 }
+/* <<<<<<<<<<<<<<<<---GALLOWS--->>>>>>>>>>>> */
+#gallows{
+    position: absolute;
+    width: 500px;
+    left: -550px;
+    top: 0px;
+    transition: .5s;
+    transition-delay: .3s;
+}
+#gallowsSub{
+    position: relative;
+    width: 100%;
+}
+#gallowsWood{
+    position: absolute;
+    width: 400px;
+    left: 200px;
+    z-index: 5;
+}
+#head{
+    position: absolute;
+    width: 120px;
+    top: 160px;
+    left: 390px;
+    z-index: 6;
+}
+#body{
+    position: absolute;
+    width: 230px;
+    top: 142px;
+    left: 325px; 
+    z-index: 2;
+}
+#arms{
+    position: absolute;
+    width: 230px;
+    top: 142px;
+    left: 325px; 
+    z-index: 3;
+}
+#wholeBody{
+    position: absolute;
+    width: 260px;
+    top: 120px;
+    left: 325px; 
+    z-index: 4;
+}
 
-#MainTitle {
+
+#menu{
+    position: absolute;
+    width: 400px;
+    right: -400px;
+    top: 400px;
+    transition: .5s;
+    transition-delay: .3s;
+}
+#menuSign{
     width: 300px;
-    margin: auto;
-    font-size: 56px;
-    margin-top: 30px;
-    font-weight: bolder;
-    color: teal;
-    text-shadow: 3px 1px 3px black;
-
 }
 
 #categories {}

@@ -31,32 +31,44 @@
 
 <body>
     <div id="bgImg">
-                
+
     </div>
-    <!-- <div id="bushBox">
+    <div id="bushBox">
         <img src="toppng.com-tumbleweed-png-tumbleweed-vector-484x499.png" alt="" id="bush">
-    </div> -->
+    </div>
     <div class="container">
-    
+
         <main>
-            
+
             <div id="NewGame">
                 <!-- <img id="newGameSign" src="newGame.png" alt=""> -->
                 <button id="newGameButton"></button>
             </div>
-            <div id="categories">
+            <div id="categories" class="">
                 <img id="categoriesSign" src="categories.png" alt="">
-                <button id="historyButton" class="categoryButton"></button>
-                <button id="artButton"class="categoryButton"></button>
-                <button id="geographyButton"class="categoryButton"></button>
-                <button id="sportButton"class="categoryButton"></button>
-                <button id="scienceButton"class="categoryButton"></button>
+                <button onclick="historyButton()" id="historyButton" class="categoryButton"></button>
+                <button onclick="artButton()" id="artButton" class="categoryButton"></button>
+                <button onclick="geographyButton()" id="geographyButton" class="categoryButton"></button>
+                <button onclick="sportButton()" id="sportButton" class="categoryButton"></button>
+                <button onclick="scienceButton()" id="scienceButton" class="categoryButton"></button>
             </div>
-            <div id="gallows">
-
+            <div id="gallows" class="hide">
+                <div id="gallowsSub">
+                    <img id="gallowsWood" src="gallows2.png" alt="">
+                    <img id="head" src="head.png" alt="" class="hide">
+                    <img id="body" src="body.png" alt="" class="hide">
+                    <img id="arms" src="arms.png" alt="" class="hide">
+                    <img id="wholeBody" src="cowboy.png" alt="" class="hide">
+                </div>
+            </div>
+            <div id="menu" class="hide">
+                <img id="menuSign" src="menuSign.png" alt="">
             </div>
             <div id="game">
 
+            </div>
+            <div id="keyboard">
+                
             </div>
             <div id="result">
 
