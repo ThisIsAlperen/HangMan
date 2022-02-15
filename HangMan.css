@@ -32,15 +32,10 @@ body {
     width: 100px;
     z-index: 0;
     height: 100px;
-    transition: 20s ease-out;
+    transition: 15s ease-out;
     position: absolute;
-   
-}
-.bushAnimation{
-    top: 0px;
-    
-}
 
+}
 
 
 
@@ -65,12 +60,13 @@ body {
     opacity: 0;
     z-index: 20;
 }
-.hide{
+
+.hide {
     display: none;
 }
 
 /* <<<<<<<<<<<<<<<<---CATEGORIES--->>>>>>>>>>>> */
-#categories{
+#categories {
     position: absolute;
     width: 390px;
     position: absolute;
@@ -80,50 +76,62 @@ body {
     transition: .5s;
     transition-delay: .3s;
 }
+
 #categoriesSign {
     width: 360px;
-    
+
 }
 
 .categoryButton {
     position: absolute;
     background-color: aqua;
     width: 200px;
-    height: 60px;
+    height: 70px;
     opacity: 0;
     z-index: 20;
-    
+
 }
 
 #historyButton {
-    top: 50px;
-    right: 125px;
-    width: 230px;
+    top: 45px;
+    right: 100px;
+   
+    transform: rotateZ(-2deg);
+    width: 265px;
 }
 
 #artButton {
-    top: 150px;
-    right: 130px;
+    top: 140px;
+    transform: rotate(-2deg);
+    right: 115px;
+    width: 220px;
 }
 
 #geographyButton {
-    top: 250px;
-    right: 80px;
-    width: 270px;
+    top: 235px;
+    right: 65px;
+    height: 75px;
+    width: 290px;
+    transform: rotateZ(-3deg);
 }
 
 #sportButton {
-    top: 370px;
-    right: 130px;
+    top: 360px;
+    right: 115px;
+    transform: rotateZ(-1deg);
+    width: 220px;
 }
 
 #scienceButton {
-    top: 470px;
-    right: 85px;
-    height: 50px;
+    top: 462px;
+    transform: rotateZ(-2deg);
+    right: 75px;
+    width: 205px;
+    height: 55px;
 }
+
 /* <<<<<<<<<<<<<<<<---GALLOWS--->>>>>>>>>>>> */
-#gallows{
+#gallows {
     position: absolute;
     width: 500px;
     left: -550px;
@@ -131,60 +139,195 @@ body {
     transition: .5s;
     transition-delay: .3s;
 }
-#gallowsSub{
+
+#gallowsSub {
     position: relative;
     width: 100%;
 }
-#gallowsWood{
+
+#gallowsWood {
     position: absolute;
     width: 400px;
     left: 200px;
     z-index: 5;
 }
-#head{
+
+#head {
     position: absolute;
     width: 120px;
     top: 160px;
     left: 390px;
     z-index: 6;
 }
-#body{
+
+#body {
     position: absolute;
     width: 230px;
     top: 142px;
-    left: 325px; 
+    left: 325px;
     z-index: 2;
 }
-#arms{
+
+#arms {
     position: absolute;
     width: 230px;
     top: 142px;
-    left: 325px; 
+    left: 325px;
     z-index: 3;
 }
-#wholeBody{
+
+#wholeBody {
     position: absolute;
     width: 260px;
     top: 120px;
-    left: 325px; 
+    left: 325px;
     z-index: 4;
 }
 
+/* <<<<<<<<<<<<<<<<---MENU SIGN--->>>>>>>>>>>> */
 
-#menu{
+#menu {
     position: absolute;
     width: 400px;
     right: -400px;
     top: 400px;
     transition: .5s;
     transition-delay: .3s;
+    font-weight: bolder;
+   
+    /* font-family: 'Akaya Telivigala', cursive; */
+    font-family: 'Architects Daughter', cursive;
+    /* font-family: 'Varela Round', sans-serif; */
 }
-#menuSign{
+
+#menuSign {
     width: 300px;
 }
+#showAnswer{
+    position: absolute;
+    width: 170px;
+    height: 50px;
+    right: 184px;
+    font-weight: bolder;
+    top: 70px;
+    background-color: transparent;
+    border: none;
+    text-shadow: 1px 1px 1px  black;
+}
+#return{
+    position: absolute;
+    width: 170px;
+    height: 50px;
+    right: 184px;
+    font-weight: bolder;
+    top: 130px;
+    background-color: transparent;
+    border: none;
+    text-shadow: 1px 1px 1px  black;
+}
 
-#categories {}
+/* <<<<<<<<<<<<<<<<---GAME AREA--->>>>>>>>>>>> */
+#game {
+    position: absolute;
+    left: 550px;
+    top: 50px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 36px;
 
-#game {}
+}
+
+#gameSub {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.gameBG {
+    position: absolute;
+    background-color: rgb(175, 137, 54);
+    opacity: .7;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    border-radius: 20px;
+    border: 10px saddlebrown solid;
+}
+
+#question {
+    position: absolute;
+    text-align: center;
+    opacity: 1;
+    z-index: 10;
+    top: 10px;
+}
+
+#answer {
+    position: absolute;
+    opacity: 1;
+    z-index: 10;
+    top: 210px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#keyboard {
+    position: absolute;    
+    left: 550px;
+    top: 440px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 36px;
+}
+
+#keyboardSub {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    opacity: 0;
+    transition: .5s;
+}
+
+#keys {
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    transform: translate(-50%);
+    left: 50%;
+    top: 10px;
+    color: black;
+    z-index: 10;
+    margin-top: 5px;
+}
+
+.key {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50px;
+    text-align: center;
+    background-color: rgba(255, 129, 71, 0.377);
+    border: rgb(90, 49, 25) 2px solid;
+    line-height: 50px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
 
 #result {}

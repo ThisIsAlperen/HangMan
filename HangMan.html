@@ -40,10 +40,10 @@
 
         <main>
 
-            <div id="NewGame">
-                <!-- <img id="newGameSign" src="newGame.png" alt=""> -->
+            <!-- <div id="NewGame">
+                <img id="newGameSign" src="newGame.png" alt="">
                 <button id="newGameButton"></button>
-            </div>
+            </div> -->
             <div id="categories" class="">
                 <img id="categoriesSign" src="categories.png" alt="">
                 <button onclick="historyButton()" id="historyButton" class="categoryButton"></button>
@@ -61,14 +61,40 @@
                     <img id="wholeBody" src="cowboy.png" alt="" class="hide">
                 </div>
             </div>
-            <div id="menu" class="hide">
-                <img id="menuSign" src="menuSign.png" alt="">
-            </div>
-            <div id="game">
+           
+            <div id="game" >
+                <div id="gameSub" class="hide" >
+                    <div class="gameBG ">
 
+                    </div>
+                    <div id="question">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, nisi?
+                    </div>
+                    <div id="answer">
+                        
+                    </div>
+                </div>
             </div>
-            <div id="keyboard">
-                
+            <div id="keyboard" >
+                <div id="keyboardSub" class="hide">
+                    <div class="gameBG">
+
+                    </div>
+                    <div id="keys">
+    
+                    </div>
+                </div>
+            </div>
+            <div id="menu"class="hide" >
+                <div id="menuSub" >
+                    <img id="menuSign" src="menuSign.png" alt="">
+                <button id="showAnswer" onclick="showAnswer()">
+                    Show Answer
+                </button>
+                <button id="return" onclick="Return()">
+                    Return
+                </button>
+                </div>
             </div>
             <div id="result">
 
