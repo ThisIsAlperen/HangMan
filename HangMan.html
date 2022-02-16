@@ -54,16 +54,16 @@
             </div>
             <div id="gallows" class="hide">
                 <div id="gallowsSub">
-                    <img id="gallowsWood" src="gallows2.png" alt="" >
+                    <img id="gallowsWood" src="gallows2.png" alt="">
                     <img id="head" src="head.png" alt="" class="hide">
                     <img id="body" src="body.png" alt="" class="hide">
                     <img id="arms" src="arms.png" alt="" class="hide">
                     <img id="wholeBody" src="cowboy.png" alt="" class="hide">
                 </div>
             </div>
-           
-            <div id="game" >
-                <div id="gameSub" class="hide" >
+
+            <div id="game">
+                <div id="gameSub" class="hide">
                     <div class="gameBG ">
 
                     </div>
@@ -75,29 +75,43 @@
                     </div>
                 </div>
             </div>
-            <div id="keyboard" >
+            <div id="keyboard">
                 <div id="keyboardSub" class="hide">
                     <div class="gameBG">
 
                     </div>
                     <div id="keys">
-    
+
                     </div>
                 </div>
             </div>
-            <div id="menu"class="hide" >
-                <div id="menuSub" >
+            <div id="menu" class="hide">
+                <div id="menuSub">
                     <img id="menuSign" src="menuSign.png" alt="">
-                <button id="showAnswer" onclick="showAnswer()">
-                    Show Answer
-                </button>
-                <button id="return" onclick="Return()">
-                    Return
-                </button>
+                    <button id="showAnswer" onclick="showAnswer()">
+                        Show Answer
+                    </button>
+                    <button id="return" onclick="Return(x = true)">
+                        Return
+                    </button>
                 </div>
             </div>
             <div id="result">
+                <div id="resultSub" class="hide">
+                    <div id="resultBG">
 
+                    </div>
+                    <div id="win" class="finalResult">
+                        You Win
+                    </div>
+                    <div id="loose" class="finalResult">
+                        You Lost
+                        <div id="correct">
+                            
+                        </div>
+                    </div>
+                    <button id="ok" class="key" onclick="OK()"> OK</button>
+                </div>
             </div>
         </main>
         <footer>
