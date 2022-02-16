@@ -15,6 +15,8 @@ const result = document.getElementById('resultSub')
 const Win = document.getElementById('win')
 const Loose = document.getElementById('loose')
 const correct = document.getElementById('correct')
+const score = document.getElementById('score')
+const lives = document.getElementById('lives')
 
 let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let wrongAnswer = 0;
@@ -62,7 +64,7 @@ var ScienceQuestions = [{
 },
 {
     Question: 'What science studies the weather? ',
-    Answer: ' Meteorology'
+    Answer: 'Meteorology'
 }
 ]
 
@@ -83,7 +85,7 @@ function bushReturn() {
 }
 // Button click functions
 function hideSignButtons() {
-
+    lives.innerText = 5
     sign.style.right = '-400px'
     setTimeout(function () { hide(sign); }, 1000)
     show(gallows)
@@ -94,6 +96,9 @@ function hideSignButtons() {
     setTimeout(function () { game.style.opacity = '1'; }, 1000)
     show(keyboard)
     setTimeout(function () { keyboard.style.opacity = '1'; }, 1000) 
+    show(score)
+    setTimeout(function () { score.style.left = '1200px'; }, 500) 
+
 
 }
 function Return(x) {
@@ -114,6 +119,8 @@ function Return(x) {
     setTimeout(function () { hide(game); }, 1000)
     keyboard.style.opacity = '0';
     setTimeout(function () { hide(keyboard); }, 1000)
+    score.style.left = '1500px';
+    setTimeout(function () { hide(score); }, 1000)
     clear()
 }
 function showAnswer() {
@@ -124,7 +131,7 @@ function showAnswer() {
 
 }
 function clear() {
-
+    
     wrongAnswer = 0;
     answer.innerHTML = ''
     
@@ -262,7 +269,7 @@ function Play(x) {
     }
     if (respond === false) {
         wrongAnswer++;
-
+        lives.innerText = Number(lives.innerText) - 1
     }
     if (wrongAnswer == 1) {
         show(head)
@@ -306,7 +313,7 @@ function loose() {
     x = false
     Return(x)
     
-    setTimeout(function () { correct.style.opacity = '1'; }, 3500)
+    setTimeout(function () { correct.style.opacity = '1'; }, 2500)
 
 }
 function OK(){
