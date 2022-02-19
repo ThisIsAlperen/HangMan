@@ -1,3 +1,4 @@
+// 
 const bush = document.getElementById('bush')
 const sign = document.getElementById('categories')
 const gallows = document.getElementById('gallows')
@@ -18,10 +19,11 @@ const correct = document.getElementById('correct')
 const score = document.getElementById('score')
 const lives = document.getElementById('lives')
 
+
 let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let wrongAnswer = 0;
 
-
+// Question List will be added from a different file
 var HistoryQuestions = [{
     Question: 'Who is the king of the Greeks at the time of Trojan Horse built?',
     Answer: 'Agamemnon'
@@ -68,34 +70,67 @@ var ScienceQuestions = [{
 }
 ]
 
-setTimeout(Bush, 5000)
-function Bush() {
-    bush.style.left = '1700px'
-    bush.style.transform = 'rotate(3600deg)'
-    setInterval(Bush, 40000)
-    setTimeout(function () { show(bush); }, 39000)
-
-    setTimeout(bushReturn, 15000)
+function Query(q, a){
+    this.question = q
+    this.answer = a
 }
+Query.prototype.word = function(a){
+    x = a
+    x = x.toUpperCase()
+    x = x.split('')
+    for (i = 0; i < x.length; i++) {
+        var parent = document.createElement('DIV')
+        var text = document.createElement('span')
+        parent.style.margin = '0'
+        text.style.opacity = '0'
+        text.style.transition = '1s'
+        parent.classList.add('key')
+        text.innerText = x[i]
+        parent.appendChild(text)
+        answer.appendChild(parent)
+        
+        if (text.innerText == '') {
+            parent.style.opacity = '0'
+            parent.classList.add('done')
+        }
+    }
+}
+
+// Bush passing through background
+setTimeout(Bush, 5000) // firts bush passes in 5 second
+function Bush() {
+    bush.style.left = '1700px' // final point at right side
+    bush.style.transform = 'rotate(3600deg)'// passing while turning around
+    setInterval(Bush, 40000) // run the Bush function every 40 second
+    setTimeout(function () { show(bush); }, 39000) // make the bush visible
+
+    setTimeout(bushReturn, 15000) // after reaching to the right side (15 second) run return function
+}
+// Bush returns to the left side 
 function bushReturn() {
-    hide(bush)
-    bush.style.left = '-100px'
-    bush.style.transform = 'rotate(0deg)'
+    hide(bush) // goes back while its hidden
+    bush.style.left = '-100px' // left point
+    bush.style.transform = 'rotate(0deg)'// turns back to be able to turn again
 
 }
 // Button click functions
-function hideSignButtons() {
-    lives.innerText = 5
-    sign.style.right = '-400px'
-    setTimeout(function () { hide(sign); }, 1000)
+function hideSignButtons() { // starts the game / hide the categories menu
+    lives.innerText = 5 
+    sign.style.right = '-400px' // slide the categories
+    setTimeout(function () { hide(sign); }, 1000) //hide the categories
+    
     show(gallows)
     setTimeout(function () { gallows.style.left = '0px'; }, 500)
+    
     show(menuSign)
     setTimeout(function () { menuSign.style.right = '-70px'; }, 500)
+    
     show(game)
     setTimeout(function () { game.style.opacity = '1'; }, 1000)
+    
     show(keyboard)
     setTimeout(function () { keyboard.style.opacity = '1'; }, 1000) 
+    
     show(score)
     setTimeout(function () { score.style.left = '1200px'; }, 500) 
 
@@ -192,27 +227,6 @@ window.onclick = function (e) {
   
 }
 
-function Answer(x) {
-    x = x.toUpperCase()
-    x = x.split('')
-
-    for (i = 0; i < x.length; i++) {
-        var parent = document.createElement('DIV')
-        var text = document.createElement('span')
-        parent.style.margin = '0'
-        text.style.opacity = '0'
-        text.style.transition = '1s'
-        parent.classList.add('key')
-        text.innerText = x[i]
-        parent.appendChild(text)
-        answer.appendChild(parent)
-        
-        if (text.innerText == '') {
-            parent.style.opacity = '0'
-            parent.classList.add('done')
-        }
-    }
-}
 function Game(x) {
     r = Math.floor(Math.random()*2)
   
@@ -239,7 +253,10 @@ function Game(x) {
     
     correct.innerText = 'Answer: '+ a
     question.innerText = q
-    Answer(a)
+    
+    x = new Query(q,a)
+    x.word(a)
+   
 }
 keys.onclick = function (e) {
     x = e.target.innerText

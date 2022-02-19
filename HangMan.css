@@ -8,6 +8,11 @@ body {
     position: relative;
     overflow: hidden;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: inherit;
+}
 
 #bgImg {
     opacity: .9;
@@ -229,7 +234,7 @@ body {
 /* <<<<<<<<<<<<<<<<---GAME AREA--->>>>>>>>>>>> */
 #game {
     position: absolute;
-    left: 550px;
+    left: 540px;
     top: 50px;
     z-index: 10;
     display: flex;
@@ -244,7 +249,7 @@ body {
 
 #gameSub {
     position: relative;
-    width: 600px;
+    width: 630px;
     height: 300px;
     opacity: 0;
     transition: .5s;
@@ -268,6 +273,7 @@ body {
     opacity: 1;
     z-index: 10;
     top: 10px;
+    padding: 0 20px ;
 }
 
 #answer {
@@ -283,7 +289,7 @@ body {
 
 #keyboard {
     position: absolute;    
-    left: 550px;
+    left: 540px;
     top: 440px;
     z-index: 10;
     display: flex;
@@ -297,7 +303,7 @@ body {
 
 #keyboardSub {
     position: relative;
-    width: 600px;
+    width: 630px;
     height: 200px;
     opacity: 0;
     transition: .5s;
@@ -360,18 +366,7 @@ body {
     opacity: 0;
     transition: 2s;
 }
-#resultBG{
-    position: absolute;
-    background-color: rgb(211, 139, 45);
-    opacity: .7;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    border-radius: 20px;
-    border: 10px saddlebrown solid;
-    
-}
+
 .finalResult{
     position: absolute;
     z-index: 10;
@@ -414,18 +409,7 @@ body {
     transition: .5s;
     transition-delay: .3s;
 }
-#scoreBG{
-    position: absolute;
-    background-color: rgb(175, 137, 54);
-    opacity: .7;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    border-radius: 20px;
-    border: 10px saddlebrown solid;
-   
-}
+
 #scoreSub{
     width: 150px;
     height: 150px;
@@ -445,4 +429,34 @@ body {
     z-index: 10;
     top: 80px;
     left: 65px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    width: 85%;
+    text-align: center;
+    height: 40px;
+}
+footer ul{
+    
+    list-style: none;
+    width: 100%;
+}
+footer li{
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+   
+}
+footer a{
+    border: 1px solid beige;
+    padding: 3px 6px;
+    border-radius: 10px;
+    color: beige;
+    transition: .3s;
+}
+footer a:hover{
+    border-color: #0d6efd!important;
+    
 }
