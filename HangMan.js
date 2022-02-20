@@ -1,4 +1,4 @@
-// 
+// see README for details
 const bush = document.getElementById('bush')
 const sign = document.getElementById('categories')
 const gallows = document.getElementById('gallows')
@@ -18,7 +18,7 @@ const Loose = document.getElementById('loose')
 const correct = document.getElementById('correct')
 const score = document.getElementById('score')
 const lives = document.getElementById('lives')
-
+// x is used as the main variable
 
 let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let wrongAnswer = 0;
@@ -69,33 +69,6 @@ var ScienceQuestions = [{
     Answer: 'Meteorology'
 }
 ]
-
-function Query(q, a){
-    this.question = q
-    this.answer = a
-}
-Query.prototype.word = function(a){
-    x = a
-    x = x.toUpperCase()
-    x = x.split('')
-    for (i = 0; i < x.length; i++) {
-        var parent = document.createElement('DIV')
-        var text = document.createElement('span')
-        parent.style.margin = '0'
-        text.style.opacity = '0'
-        text.style.transition = '1s'
-        parent.classList.add('key')
-        text.innerText = x[i]
-        parent.appendChild(text)
-        answer.appendChild(parent)
-        
-        if (text.innerText == '') {
-            parent.style.opacity = '0'
-            parent.classList.add('done')
-        }
-    }
-}
-
 // Bush passing through background
 setTimeout(Bush, 5000) // firts bush passes in 5 second
 function Bush() {
@@ -113,81 +86,42 @@ function bushReturn() {
     bush.style.transform = 'rotate(0deg)'// turns back to be able to turn again
 
 }
-// Button click functions
-function hideSignButtons() { // starts the game / hide the categories menu
-    lives.innerText = 5 
-    sign.style.right = '-400px' // slide the categories
-    setTimeout(function () { hide(sign); }, 1000) //hide the categories
-    
-    show(gallows)
-    setTimeout(function () { gallows.style.left = '0px'; }, 500)
-    
-    show(menuSign)
-    setTimeout(function () { menuSign.style.right = '-70px'; }, 500)
-    
-    show(game)
-    setTimeout(function () { game.style.opacity = '1'; }, 1000)
-    
-    show(keyboard)
-    setTimeout(function () { keyboard.style.opacity = '1'; }, 1000) 
-    
-    show(score)
-    setTimeout(function () { score.style.left = '1200px'; }, 500) 
-
-
+// new Object for the questions
+function Query(q, a){ 
+    this.question = q
+    this.answer = a
 }
-function Return(x) {
-    if (x) {
-        show(sign)
-        setTimeout(function () { sign.style.right = '35px'; }, 1000)
-    }
-    else{
-        show(result)
-        setTimeout(function () { result.style.opacity = '1'; }, 1000)
+// Object prototype to create word
+Query.prototype.word = function(a){
+    x = a
+    x = x.toUpperCase()
+    x = x.split('')
+    for (i = 0; i < x.length; i++) {
+        var parent = document.createElement('DIV')
+        var text = document.createElement('span')
+        parent.style.margin = '0'
+        text.style.opacity = '0'
+        text.style.transition = '1s'
+        parent.classList.add('key')
+        text.innerText = x[i]
+        parent.appendChild(text)
+        answer.appendChild(parent)
         
-    }
-    gallows.style.left = '-550px';
-    setTimeout(function () { hide(gallows); }, 1000)
-    menuSign.style.right = '-400px';
-    setTimeout(function () { hide(menuSign); }, 1000)
-    game.style.opacity = '0';
-    setTimeout(function () { hide(game); }, 1000)
-    keyboard.style.opacity = '0';
-    setTimeout(function () { hide(keyboard); }, 1000)
-    score.style.left = '1500px';
-    setTimeout(function () { hide(score); }, 1000)
-    clear()
-}
-function showAnswer() {
-  
-    for (i = 0; i < answer.children.length; i++) {
-        answer.children[i].children[0].style.opacity = '1'
-    }
-
-}
-function clear() {
-    
-    wrongAnswer = 0;
-    answer.innerHTML = ''
-    
-    for(i=0;i<keys.children.length;i++){
-        if(keys.children[i].classList[1] == 'disabled'){
-            keys.children[i].classList.remove('disabled')
+        if (text.innerText == '') { // if there is space in the word, hides
+            parent.style.opacity = '0'
+            parent.classList.add('done')
         }
-       
     }
-    setTimeout(function () { hide(head); }, 1000)
-    setTimeout(function () { hide(body); }, 1000)
-    setTimeout(function () { hide(arms); }, 1000)
-    setTimeout(function () { hide(wholeBody); }, 1000)
-
 }
+// mainly used hide and show functions
 function hide(x) {
     x.classList.add('hide')
 }
 function show(x) {
     x.classList.remove('hide')
 }
+
+// buttons runs on clicked to the category
 function historyButton() {
     hideSignButtons()
     Game('history')
@@ -209,27 +143,35 @@ function scienceButton() {
     Game('science')
 }
 
-//Create keyboard
-CreateKeys()
-function CreateKeys() {
-    for (i = 0; i < alphabet.length; i++) {
-        var key = document.createElement('div')
-        key.classList.add('key')
-        x = alphabet[i].toUpperCase()
+// Button click functions
+function hideSignButtons() { // starts the game / hide the categories menu
+    lives.innerText = 5 
+    sign.style.right = '-400px' // slide the categories
+    setTimeout(function () { hide(sign); }, 1000) //hide the categories
+    
+    // shows the game blocks
+    show(gallows)
+    setTimeout(function () { gallows.style.left = '0px'; }, 500)
+    
+    show(menuSign)
+    setTimeout(function () { menuSign.style.right = '-70px'; }, 500)
+    
+    show(game)
+    setTimeout(function () { game.style.opacity = '1'; }, 1000)
+    
+    show(keyboard)
+    setTimeout(function () { keyboard.style.opacity = '1'; }, 1000) 
+    
+    show(score)
+    setTimeout(function () { score.style.left = '1200px'; }, 500) 
 
-        key.innerText = x
 
-        keys.appendChild(key)
-    }
 }
-
-window.onclick = function (e) {
-  
-}
-
+// runs when a key clicked
 function Game(x) {
-    r = Math.floor(Math.random()*2)
+    r = Math.floor(Math.random()*2) //random number (0-1)
   
+    // checks the category
     if (x === 'history') {
         q = HistoryQuestions[r].Question
         a = HistoryQuestions[r].Answer
@@ -250,21 +192,75 @@ function Game(x) {
         q = ScienceQuestions[r].Question
         a = ScienceQuestions[r].Answer
     }
-    
+    // correct will be appear in case of loosing 
     correct.innerText = 'Answer: '+ a
+    // question will be shown at the main page
     question.innerText = q
     
+    // answer will be created
     x = new Query(q,a)
     x.word(a)
    
 }
-keys.onclick = function (e) {
+// this will run in case of the end (loosing or winning)or returning by using the side menu
+function Return(x) {
+    if (x) {  // if returned from the side menu or OK clicked after win or loose this will work
+        show(sign)
+        setTimeout(function () { sign.style.right = '35px'; }, 1000)
+    }
+    else{ // in case of win or loose this will work right away then the above after hitting the OK
+        show(result)
+        setTimeout(function () { result.style.opacity = '1'; }, 1000)
+        
+    }
+ 
+    clear() 
+}
+NodeList.prototype.forEach = HTMLCollection.prototype.forEach = Array.prototype.forEach; // to be able to for Each method at html (I found out at the end of the code)
+
+function showAnswer() { // if show answer at the side menu clicked, this will run
+    for (i = 0; i < answer.children.length; i++) {
+        answer.children[i].children[0].style.opacity = '1'
+    }
+    keys.children.forEach(child =>
+        child.classList.add('disabled') // disable all the keys
+    )
+   
+
+}
+function clear() { // reset everything 
+    
+    wrongAnswer = 0;
+    answer.innerHTML = ''
+
+    keys.children.forEach(child =>
+        child.classList.remove('disabled')
+    )
+    
+}
+
+//Create keyboard
+CreateKeys()
+function CreateKeys() {
+    for (i = 0; i < alphabet.length; i++) {
+        var key = document.createElement('div')
+        key.classList.add('key')
+        x = alphabet[i].toUpperCase()
+
+        key.innerText = x
+
+        keys.appendChild(key)
+    }
+}
+
+
+keys.onclick = function (e) { // click function for the keyboard
     x = e.target.innerText
     y = x.length
     if(y<2){
         
         if (e.target.classList[1] != 'disabled') {
-            Play(x)
+            Play(x) 
             win()
             
         }
@@ -273,21 +269,24 @@ keys.onclick = function (e) {
     }
    
 }
-function Play(x) {
+function Play(x) { 
     var respond = false
+    
+    // check if the word includes clicked letter 
     for (i = 0; i < answer.children.length; i++) {
-        if (x == answer.children[i].children[0].innerText) {
+        if (x == answer.children[i].children[0].innerText) { // shows the letter 
             answer.children[i].children[0].style.opacity = '1'
-            respond = true
+            respond = true 
             answer.children[i].classList.add('done')
+            //adds done to check in case of winning
         }
-
-
     }
+    // if letter is correct, respond will change to true so the wrong answer will not increase
     if (respond === false) {
         wrongAnswer++;
         lives.innerText = Number(lives.innerText) - 1
     }
+    // if its increase, shows the proper body part
     if (wrongAnswer == 1) {
         show(head)
     }
@@ -306,16 +305,17 @@ function Play(x) {
     }
 
 }
-function win() {
+function win() { // checks for done class
     var letters = []
     
     for (i = 0; i < answer.children.length; i++) {
         if (answer.children[i].classList.length > 1) {
             letters.push(answer.children[i])
-            
+            //if letter includes done class adds to an array
+    
         }
     }
-    
+    // checks if the array has same length with the letters of the word 
     if (letters.length == answer.children.length && letters.length>0) {
         x = false
         
@@ -333,7 +333,7 @@ function loose() {
     setTimeout(function () { correct.style.opacity = '1'; }, 2500)
 
 }
-function OK(){
+function OK(){ 
     Win.style.opacity = '0';
     Loose.style.opacity = '0';
     result.style.opacity = '0';
